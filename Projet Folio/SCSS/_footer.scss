@@ -1,0 +1,19 @@
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 10px $primary-color;
+  border-top: 2px solid $primary-color;
+  
+  a {
+    color: $primary-color;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    
+    &:hover {
+      color: $secondary-color;
+      text-shadow: 0 0 5px $secondary-color, 0 0 10px $secondary-color, 0 0 20px $secondary-color;
+    }
+  }
+}
+

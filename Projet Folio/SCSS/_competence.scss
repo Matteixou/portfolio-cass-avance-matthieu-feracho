@@ -1,0 +1,44 @@
+.competence {
+    padding: 50px;
+    
+    .grid-container {
+      @include grid-layout(250px);
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 15px;
+      
+      .grid-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        text-align: center;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        transition: $transition;
+        
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 20px $primary-color, 0 0 30px $secondary-color;
+        }
+        
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          transition: transform 0.3s;
+          
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+        
+        h3 {
+          font-size: 1.8rem;
+          color: $primary-color;
+          @include neon-glow($primary-color);
+        }
+      }
+    }
+  }
+  
+  

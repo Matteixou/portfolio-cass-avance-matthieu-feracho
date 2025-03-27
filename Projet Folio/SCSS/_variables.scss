@@ -1,0 +1,15 @@
+// Variables globales
+$primary-color: #0ff;
+$secondary-color: #f0f;
+$background-dark: #0a0a0a;
+$background-color: #0a0a0a; // Consolidated with background-dark
+$text-color: #fff;
+$font-main: 'Orbitron', sans-serif;
+$transition: all 0.3s ease;
+$spacing: 1rem;
+$neon-glow: rgba(0, 255, 255, 0.8);
+$button-bg: linear-gradient(45deg, $primary-color, $secondary-color);
+
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+

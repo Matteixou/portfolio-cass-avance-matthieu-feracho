@@ -1,0 +1,30 @@
+@mixin neon-glow($color) {
+    text-shadow: 0 0 5px $color, 0 0 10px $color, 0 0 20px $color;
+  }
+  
+  @mixin btn-style {
+    background: $button-bg;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: $transition;
+    
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px $primary-color;
+    }
+  }
+  
+  @mixin card-hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px $primary-color;
+  }
+  
+  @mixin grid-layout($min-width: 200px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+    gap: 20px;
+  }
+  
+  

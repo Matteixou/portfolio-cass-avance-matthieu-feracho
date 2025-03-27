@@ -1,0 +1,222 @@
+// Experience section styling
+.experiences {
+    padding: 50px 20px;
+    position: relative;
+    
+    // Neon line down the center for timeline effect
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, $primary-color, $secondary-color, transparent);
+      box-shadow: 0 0 15px $primary-color;
+      z-index: 1;
+      
+      @media (max-width: 768px) {
+        left: 30px;
+      }
+    }
+    
+    .grid-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .grid-item {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      padding: 30px;
+      position: relative;
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      transition: $transition;
+      
+      // Timeline dot
+      &::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: $primary-color;
+        border-radius: 50%;
+        left: -60px;
+        top: 30px;
+        box-shadow: 0 0 10px $primary-color, 0 0 20px $primary-color;
+        z-index: 3;
+        
+        @media (max-width: 768px) {
+          left: -40px;
+        }
+      }
+      
+      // Connector line
+      &::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        background: $primary-color;
+        left: -40px;
+        top: 40px;
+        z-index: 2;
+        
+        @media (max-width: 768px) {
+          width: 20px;
+          left: -20px;
+        }
+      }
+      
+      &:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.4), 0 0 15px rgba(255, 0, 255, 0.3);
+        
+        .logo {
+          transform: rotate(5deg) scale(1.1);
+        }
+        
+        h4 {
+          text-shadow: 0 0 10px $primary-color, 0 0 20px $primary-color;
+        }
+      }
+      
+      .logo {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 10px;
+        margin-bottom: 15px;
+        transition: transform 0.5s ease;
+        float: right;
+        margin-left: 20px;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+      }
+      
+      h4 {
+        font-size: 1.8rem;
+        color: $primary-color;
+        margin-bottom: 5px;
+        transition: text-shadow 0.3s ease;
+        display: inline-block;
+      }
+      
+      h5 {
+        font-size: 1.2rem;
+        color: $secondary-color;
+        margin-bottom: 20px;
+        font-weight: normal;
+        letter-spacing: 1px;
+      }
+      
+      p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+        position: relative;
+        padding-left: 20px;
+        
+        &::before {
+          content: '>';
+          position: absolute;
+          left: 0;
+          color: $primary-color;
+          font-weight: bold;
+        }
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      
+      a {
+        color: $secondary-color;
+        font-weight: bold;
+        position: relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: $secondary-color;
+          transition: width 0.3s ease;
+        }
+        
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+    
+    // Responsive adjustments
+    @media (max-width: 768px) {
+      .grid-item {
+        max-width: calc(100% - 60px);
+        margin-left: 60px;
+        margin-right: 0;
+        
+        .logo {
+          width: 60px;
+          height: 60px;
+        }
+        
+        h4 {
+          font-size: 1.5rem;
+        }
+        
+        h5 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  
+  // Animation keyframes
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 30px rgba(255, 0, 255, 0.3);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  // Apply animations
+  .experiences .grid-item::before {
+    animation: pulse 2s infinite;
+  }
+  
+  .experiences .grid-item {
+    animation: glow 4s infinite;
+  }
+  

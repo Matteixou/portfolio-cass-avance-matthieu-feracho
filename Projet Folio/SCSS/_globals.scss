@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background-dark;
+  color: $text-color;
+  font-family: $font-main;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  
+  &:hover {
+    color: $secondary-color;
+    @include neon-glow($primary-color);
+  }
+}
+

@@ -1,0 +1,18 @@
+.hero {
+    text-align: center;
+    padding: 50px;
+    
+    h2 {
+      .glow {
+        color: $secondary-color;
+        @include neon-glow($secondary-color);
+      }
+    }
+    
+    .btn {
+      @include btn-style;
+      margin-top: 20px;
+    }
+  }
+  
+  

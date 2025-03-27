@@ -1,0 +1,32 @@
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    
+    &.small {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+  }
+  
+  .grid-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: $spacing;
+  }
+  
+  

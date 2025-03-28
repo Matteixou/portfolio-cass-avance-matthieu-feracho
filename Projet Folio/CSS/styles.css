@@ -1,0 +1,364 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #0ff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+a:hover {
+  color: #f0f;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 10px #0ff;
+}
+.header nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px;
+}
+.hero h2 .glow {
+  color: #f0f;
+  text-shadow: 0 0 5px #f0f, 0 0 10px #f0f, 0 0 20px #f0f;
+}
+.hero .btn {
+  background: linear-gradient(45deg, #0ff, #f0f);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+.hero .btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #0ff;
+}
+
+.competence {
+  padding: 50px;
+}
+.competence .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 15px;
+}
+.competence .grid-container .grid-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  text-align: center;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.competence .grid-container .grid-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #0ff, 0 0 30px #f0f;
+}
+.competence .grid-container .grid-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.competence .grid-container .grid-item img:hover {
+  transform: scale(1.05);
+}
+.competence .grid-container .grid-item h3 {
+  font-size: 1.8rem;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+.projects {
+  padding: 50px;
+}
+.projects .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.projects .grid-container .grid-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.projects .grid-container .grid-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #0ff;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.logo.small {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.experiences {
+  padding: 50px 20px;
+  position: relative;
+}
+.experiences::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #0ff, #f0f, transparent);
+  box-shadow: 0 0 15px #0ff;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .experiences::before {
+    left: 30px;
+  }
+}
+.experiences .grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+.experiences .grid-item {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 30px;
+  position: relative;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+.experiences .grid-item::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #0ff;
+  border-radius: 50%;
+  left: -60px;
+  top: 30px;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  z-index: 3;
+}
+@media (max-width: 768px) {
+  .experiences .grid-item::before {
+    left: -40px;
+  }
+}
+.experiences .grid-item::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background: #0ff;
+  left: -40px;
+  top: 40px;
+  z-index: 2;
+}
+@media (max-width: 768px) {
+  .experiences .grid-item::after {
+    width: 20px;
+    left: -20px;
+  }
+}
+.experiences .grid-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4), 0 0 15px rgba(255, 0, 255, 0.3);
+}
+.experiences .grid-item:hover .logo {
+  transform: rotate(5deg) scale(1.1);
+}
+.experiences .grid-item:hover h4 {
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+.experiences .grid-item .logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.5s ease;
+  float: right;
+  margin-left: 20px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+.experiences .grid-item h4 {
+  font-size: 1.8rem;
+  color: #0ff;
+  margin-bottom: 5px;
+  transition: text-shadow 0.3s ease;
+  display: inline-block;
+}
+.experiences .grid-item h5 {
+  font-size: 1.2rem;
+  color: #f0f;
+  margin-bottom: 20px;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+.experiences .grid-item p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 20px;
+}
+.experiences .grid-item p::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: #0ff;
+  font-weight: bold;
+}
+.experiences .grid-item p:last-child {
+  margin-bottom: 0;
+}
+.experiences .grid-item a {
+  color: #f0f;
+  font-weight: bold;
+  position: relative;
+}
+.experiences .grid-item a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f0f;
+  transition: width 0.3s ease;
+}
+.experiences .grid-item a:hover::after {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .experiences .grid-item {
+    max-width: calc(100% - 60px);
+    margin-left: 60px;
+    margin-right: 0;
+  }
+  .experiences .grid-item .logo {
+    width: 60px;
+    height: 60px;
+  }
+  .experiences .grid-item h4 {
+    font-size: 1.5rem;
+  }
+  .experiences .grid-item h5 {
+    font-size: 1rem;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 30px rgba(255, 0, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.experiences .grid-item::before {
+  animation: pulse 2s infinite;
+}
+
+.experiences .grid-item {
+  animation: glow 4s infinite;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 10px #0ff;
+  border-top: 2px solid #0ff;
+}
+.footer a {
+  color: #0ff;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.footer a:hover {
+  color: #f0f;
+  text-shadow: 0 0 5px #f0f, 0 0 10px #f0f, 0 0 20px #f0f;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,16 +1,11 @@
-// First import variables and mixins
-@import 'variables';
-@import 'mixins';
-
-// Then import global styles
-@import 'globals';
-
-// Then import component styles
-@import 'header';
-@import 'hero';
-@import 'competence';
-@import 'projects';
-@import 'components';
-@import 'experience'; // Add the new experience file
-@import 'footer';
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'globals' as *;
+@use 'header' as *;
+@use 'hero' as *;
+@use 'competence' as *;
+@use 'projects' as *;
+@use 'component' as *;
+@use 'experiences' as *;
+@use 'footer' as *;
 
